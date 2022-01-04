@@ -6,6 +6,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class AnswerDTO {
+
+    private String id;
     @NotBlank
     private String userId;
     @NotBlank
@@ -22,10 +24,25 @@ public class AnswerDTO {
 
     }
 
-    public AnswerDTO(@NotBlank String userId, @NotBlank String questionId, @NotBlank String answer) {
+    public AnswerDTO( @NotBlank String userId, @NotBlank String questionId, @NotBlank String answer) {
         this.userId = userId;
         this.questionId = questionId;
         this.answer = answer;
+    }
+
+    public AnswerDTO( @NotBlank String id, @NotBlank String userId, @NotBlank String questionId, @NotBlank String answer) {
+        this.id = id;
+        this.userId = userId;
+        this.questionId = questionId;
+        this.answer = answer;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getPosition() {
